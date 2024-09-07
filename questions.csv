@@ -1,0 +1,51 @@
+question_id,subject,a_correct,a_1,a_2,a_3,question
+201,5,Diamond Pickaxe,Wooden Pickaxe,Stone Pickaxe,Iron Pickaxe,What is the best pickaxe for mining diamond ore?
+202,5,Redstone,Gold,Iron,Coal,Which material is used to create Redstone components in Minecraft?
+203,5,Ender Dragon,Wither,Guardian,Elder Guardian,Which boss is the final challenge in Minecraft's End dimension?
+204,5,Steve,Alex,Notch,Herobrine,What is the default player character's name in Minecraft?
+205,5,Nether,End,Overworld,The Void,In which dimension can you find Nether Fortresses?
+206,5,Obsidian,Lava Stone,End Stone,Netherrack,What block is required to build a Nether Portal?
+207,5,Iron Ingot,Gold Ingot,Copper Ingot,Diamond Ingot,Which ingot is used to craft an iron sword?
+208,5,Redstone,Iron,Gold,Diamond,What is used to craft a Redstone Torch?
+209,5,Emerald,Diamond,Gold,Iron,Which gem is the rarest in Minecraft?
+210,5,Crafting Table,Smoker,Furnace,Anvil,What is used to craft items from resources?
+211,5,Wooden Planks,Stone Bricks,Iron Bars,Glass,What is used to craft a crafting table?
+212,5,Bedrock,Stone,Grass,Wood,Which block cannot be broken in Survival mode?
+213,5,Shears,Pickaxe,Axe,Sword,What tool is used to collect leaves and wool?
+214,5,Ender Pearl,Blaze Powder,Wither Skeleton Skull,Nether Star,Which item is used to enter the End dimension?
+215,5,Diamond Armor,Iron Armor,Leather Armor,Chainmail Armor,What is the highest tier of armor in Minecraft?
+216,5,Redstone Torch,Glowstone Lantern,Sea Lantern,Jack o' Lantern,What light source can be crafted using Redstone?
+217,5,End Portal Frame,Nether Portal Frame,Beacon,Command Block,What block is used to create the End Portal?
+218,5,Wooden Sword,Stone Sword,Iron Sword,Diamond Sword,What is the best sword you can craft with diamonds?
+219,5,Netherite,Diamond,Gold,Emerald,What is the rarest material for tools and armor?
+220,5,Gold Ore,Iron Ore,Coal Ore,Redstone Ore,Which ore is used to craft golden items?
+221,5,Grass Block,Stone Block,Dirt Block,Clay Block,What block is commonly found on the surface in Minecraft?
+222,5,Chests,Barrels,Shulker Boxes,Ender Chests,What can store items for the player?
+223,5,Shears,Pickaxe,Axe,Hoe,What tool is used to gather wool from sheep?
+224,5,Iron Pickaxe,Diamond Pickaxe,Stone Pickaxe,Wooden Pickaxe,What is needed to mine diamond ore?
+225,5,Blast Furnace,Smoker,Furnace,Campfire,Which block is used to smelt ores faster?
+226,5,Emerald Ore,Diamond Ore,Gold Ore,Iron Ore,What type of ore is found in the extreme hills biome?
+227,5,End City,Stronghold,Nether Fortress,Ocean Monument,Where can you find an Elytra?
+228,5,Beetroot,Carrot,Potato,Wheat,What is a vegetable crop in Minecraft?
+229,5,Nether Fortress,End Portal,Stronghold,Ocean Monument,Where do you find Blaze Rods?
+230,5,Gravel,Sand,Dirt,Clay,What block is commonly found at the bottom of oceans?
+231,5,Enderman,Zombie,Piglin,Skeleton,Which mob drops Ender Pearls?
+232,5,Redstone Dust,Iron Ingots,Gold Ingots,Diamond,What is required to craft a Redstone Torch?
+233,5,Shears,Pickaxe,Hoe,Shovel,What tool is used to harvest leaves?
+234,5,Nether,End,Overworld,The Void,Which dimension contains the Ender Dragon?
+235,5,Diamond,Dirt,Gold,Iron,What material is used to make the best tools in the game?
+236,5,Furnace,Blast Furnace,Smoker,Campfire,What block is used to cook food and smelt ores?
+237,5,Enderman,Wither Skeleton,Zombie Pigman,Stray,Which mob can teleport and drops Ender Pearls?
+238,5,Grass Block,Dirt Block,Stone Block,Wood Block,What block covers most of the surface in Minecraft?
+239,5,Iron Ore,Gold Ore,Redstone Ore,Emerald Ore,Which ore is commonly found in caves?
+240,5,Beetroot Soup,Carrot Soup,Pumpkin Soup,Mushroom Soup,What is a food item that restores hunger?
+241,5,Diamond Sword,Iron Sword,Stone Sword,Wooden Sword,What weapon is the most powerful in terms of damage?
+242,5,Water Bucket,Lava Bucket,Milk Bucket,Ice Bucket,What item is used to collect water in Minecraft?
+243,5,Blaze Rod,Ender Pearl,Nether Star,Wither Skeleton Skull,What item is used to brew potions?
+244,5,Leather,Iron,Gold,Diamond,What material is used to craft the simplest form of armor?
+245,5,Stone,Grass,Wood,Dirt,What block is most commonly used for building foundations?
+246,5,Compass,Clock,Map,Beacon,What item helps you navigate and find your way?
+247,5,Enchanting Table,Anvil,Furnace,Smithing Table,What block is used to add enchantments to items?
+248,5,Redstone,Diamond,Gold,Iron,What is used to create Redstone circuitry?
+249,5,Shovel,Pickaxe,Axe,Hoe,What tool is used for digging blocks like sand or dirt?
+250,5,Golden Apple,Enchanted Apple,Regular Apple,Golden Carrot,What item provides health regeneration and absorption?

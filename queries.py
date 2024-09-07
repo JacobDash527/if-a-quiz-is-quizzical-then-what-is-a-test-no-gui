@@ -1,6 +1,8 @@
 import sqlite3
 import time
 import hashlib
+import random
+from time import time
 
 #connect to db
 db = sqlite3.connect("database.db")
@@ -160,7 +162,7 @@ def banish_child(class_id):
             WHERE class_id = {class_id}
             AND user_id = {students[child-1]}
             """
-    print(f"\n{get_user_name(child)} has been successfuly banished. BE GONE IMBECILE!")
+    print(f"\n{get_user_name(students[child-1])} has been successfuly banished. BE GONE IMBECILE!")
     query.execute(sql)
     db.commit()
 
@@ -172,7 +174,7 @@ def generate_quiz(class_id):
     for subject in get_subjects():
         iterations += 1
         print(f"[{iterations}] {subject}")
-    subject_id = input("Please select a subject from the ")
+    subject_id = input("Please select a subject from the list above: ")
 
     questions = []
 
@@ -251,3 +253,135 @@ def get_user_name(user_id):
         name = f"{row['fname']} {row['lname']}"
     
     return name
+
+def get_assigned_quizzes(current_class_id):
+    quizzes = []
+    sql = f"""
+            SELECT quiz_id
+            FROM quizzes
+            WHERE class_id = {current_class_id}
+            """
+    
+    for row in query.execute(sql):
+        quizzes.append(row["quiz_id"])
+    
+    return quizzes
+
+def get_quiz_name(quiz_id):
+    sql = f"""
+            SELECT quiz_name
+            FROM quizzes
+            WHERE quiz_id = {quiz_id}
+            """
+
+    for row in query.execute(sql):
+        name = row["quiz_name"]
+    
+    return name
+
+def get_quiz_score(user_id, quiz_id):
+    score = 0
+    sql = f"""
+            SELECT score
+            FROM userquizzes
+            WHERE user_id = {user_id}
+            AND quiz_id = {quiz_id}
+            """
+    
+    for row in query.execute(sql):
+        score = row["score"]
+        
+    return score
+
+def take_quiz(user_id, quiz_id):
+    answers = []
+    questions = []
+    score = 0
+    exists = False
+    start_time = int(time())
+    over_time = False
+    time_limit = 0
+    answered = 0
+
+    sql = f"""
+            SELECT time_allowed
+            FROM quizzes
+            WHERE quiz_id = {quiz_id}
+            """
+
+    for row in query.execute(sql):
+        time_limit = row["time_allowed"]
+    print(f"Time: {time_limit}")
+
+    sql = f"""
+            SELECT *
+            FROM userquizzes
+            WHERE user_id = {user_id}
+            AND quiz_id = {quiz_id}
+            """
+    
+    for row in query.execute(sql):
+        exists = True
+
+    if exists == False:
+        sql = f"""
+                INSERT INTO userquizzes(quiz_id, user_id)
+                VALUES({quiz_id}, {user_id})
+                """
+        query.execute(sql)
+        db.commit()
+
+    sql = f"""
+            SELECT question_id
+            FROM quizzesquestions
+            WHERE quiz_id = {quiz_id}
+            """
+    
+    for row in query.execute(sql):
+        questions.append(row["question_id"])
+    
+    for question in questions:
+        sql = f"""
+                SELECT question, a_correct, a_1, a_2, a_3
+                FROM questions
+                WHERE question_id = {question}
+                """
+        
+        for row in query.execute(sql):
+            iterations = 0
+            if over_time == False:
+                iterations += 1
+                options = [row["a_correct"], row["a_1"], row["a_2"], row["a_3"]]
+                random.shuffle(options)
+
+                print(f"\nQuestion ({iterations}/{len(questions)}): {row["question"]}\n[1] {options[0]}\n[2] {options[1]}\n[3] {options[2]}\n[4] {options[3]}\nTime left: {int(time_limit-(time()- start_time))} seconds")
+                answer = input("Please enter the number corresponding to your answer as seen above: ")
+                answers.append(options[int(answer)-1])
+                if (int(time()) - start_time) >= time_limit:
+                    over_time = True
+                answered += 1
+        
+    for i in range(0, answered):
+        sql = f"""
+            SELECT question, a_correct, a_1, a_2, a_3
+            FROM questions
+            WHERE question_id = {questions[i]}
+            """
+        
+        for row in query.execute(sql):
+            print(f"\nQuestion: {row["question"]}\nYour answer: {answers[i]}\nCorrect answer: {row["a_correct"]}")
+            if answers[i] == row["a_correct"]:
+                score += 1
+        
+    score_str = f"{score}/{len(questions)}"
+    print(f"\nYour final score is {score}/{len(questions)}")
+
+    sql = f"""
+            UPDATE userquizzes
+            SET score = "{score_str}"
+            WHERE quiz_id = {quiz_id}
+            AND user_id = {user_id}
+            """
+    
+    query.execute(sql)
+    db.commit()

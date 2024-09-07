@@ -9,4 +9,4 @@ query = db.cursor()
 
 import queries
 
-queries.get_user_name(10)
+queries.take_quiz(9,7)
